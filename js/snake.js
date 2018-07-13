@@ -179,10 +179,8 @@ function createBox(){
 
 function detect(){
 	if(paused){
-		console.log(paused);
 		return;
 	}
-	console.log(pressed);
 	if(pressed[keys.RIGHT]){
 		move(20);
 	}
