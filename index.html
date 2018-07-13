@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Snake</title>
+	<link rel="stylesheet" type="text/css" href="./stylesheets/snake.css">
+	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+</head>
+<body>
+	<div class="start-screen">
+		<div class="start-text">
+			<h1>Snake</h1>
+			<h4>A snake game made using HTML, CSS, and Javascript</h4>
+			<button>New Game</button>
+		</div>
+	</div>
+	<div class="board hide">
+		<div class="box">
+
+		</div>	
+		<div class="point-box">
+
+		</div>
+
+	</div>
+	<div class="modal">
+		<div>
+			<h3>Paused</h3>
+			<p>Press [space] to resume.</p>
+		</div>
+	</div>
+	<div class="modal">
+		<div>
+			<h3>Game over !</h3>
+			<p>You died :(</p>
+			<button>Play again ?</button>
+		</div>
+	</div>
+	<div class='footer hide'>
+		<a href="github.com">Source code</a>
+		<span>Length:<span id="length">1</span></span>
+	</div>
+	<script type="text/javascript" src="./js/snake.js"></script>
+</body>
+</html>

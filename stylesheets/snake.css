@@ -1,0 +1,153 @@
+*{
+	margin:0;
+	padding:0;
+	box-sizing: border-box;
+	font-size:12px;
+	font-family: 'Press Start 2P', cursive;
+
+}
+
+html{
+	height:100vh;
+}
+
+body{
+	background-color: black;
+	overflow:hidden;
+}
+
+.box{
+	position:absolute;
+	background-image: url('../img/snakeblock.png');
+	width:20px;
+	height:20px;
+}
+
+.deadblock{
+	background-image: url('../img/deadblock.png');
+	z-index: 1;
+	width:20px;
+	height:20px;
+}
+
+.point-box{
+	position:absolute;
+	background-color:red;
+	left:0;
+	top:0;
+	width:20px;
+	height:20px;
+}
+
+.board{
+	height:0;
+	position:absolute;
+	width:1480px;
+	left:20px;
+	top:20px;
+	background-color:#dddddd;
+	transition:all 0.5s linear;
+}
+
+.new{
+	left:-100px;
+}
+
+.pause-modal{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+	background-color:rgba(0,0,0,0.8);
+	padding:25px;
+	text-align:center;
+	color:white;
+	width:360px;
+}
+
+.modal{
+	display:none;
+}
+
+.pause-modal p{
+	margin-top:20px;
+}
+
+.pause-modal h3{
+	font-size:120%;
+}
+
+.start-screen{
+	text-align:center;
+	color:#00FF00;
+	width:1140px;
+	margin:0 auto;
+	transition: all 0.5s linear;
+}
+
+.start-text{
+	margin-top:200px;
+}
+
+.start-text h1{
+	font-size:500%;
+	margin-top:20px;
+}
+
+.start-text h4{
+	font-size:110%;
+	margin-top:50px;
+}
+
+.start-text button{
+	margin-top:50px;
+	padding:10px 15px;
+	border:3px solid #00FF00;
+	font-size:150%;
+	background-color:black;
+	color:#00FF00;
+	outline:none;
+	cursor:pointer;
+	transition: transform 0.2s linear;
+}
+
+.start-text button:hover{
+	transform:scale(1.2);
+}
+
+.hide{
+	display:none;
+}
+
+.show{
+	display:block;
+	height:680px;
+}
+
+.pause-modal button{
+	padding:10px 15px;
+	background-color:transparent;
+	color:#00FF00;
+	margin-top:20px;
+	border: 1px solid #00FF00;
+	cursor:pointer;
+}
+
+.footer{
+	position:absolute;
+	top:720px;
+	text-align:center;
+	width:1480px;
+	margin:0 auto;
+	font-size:120%;
+	color:#00FF00;
+}
+
+.footer span{
+	float:right;
+}
+
+.footer a:link,
+.footer a:visited{
+	color:#00FF00;
+}
