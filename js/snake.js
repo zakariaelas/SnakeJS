@@ -171,7 +171,6 @@ function createBox(){
 	box_arr.push(secondBox);
 	box_arr.push(thirdBox);
 	length += 3;
-	pace++;
 	lengthDOM.innerText = length;
 
 }
