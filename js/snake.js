@@ -15,7 +15,7 @@ var food = {
 	left: 0
 };
 
-var length, box_arr, paused, pressed;
+var length = 1, box_arr = [], paused = false, pressed = {};
 
 
 var keys = {
