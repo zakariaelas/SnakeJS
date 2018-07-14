@@ -54,6 +54,7 @@ body{
 }
 
 .pause-modal{
+	z-index:1000;
 	position:absolute;
 	top:45%;
 	left:50%;

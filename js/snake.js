@@ -51,6 +51,7 @@ playAgainButton.addEventListener("click",() => {
 
 //Listener callback function
 const keydownListener = (event) => {
+	console.log("key : "+event.keyCode);
 	if(event.keyCode === 32){
 		pauseModal.classList.toggle("pause-modal");
 		pauseModal.classList.toggle("modal");
@@ -63,6 +64,7 @@ const keydownListener = (event) => {
 		|| event.keyCode === keys.UP 
 		|| event.keyCode === keys.DOWN)
 	){
+		console.log('here');
 		pressed = {};
 		pressed[event.keyCode] = true;
 		return;
@@ -75,6 +77,7 @@ const keydownListener = (event) => {
 	){
 		pressed = {};
 		pressed[event.keyCode] = true;
+		detect();
 	}
 }
 
@@ -113,9 +116,12 @@ function move(left = 0, top = 0, right = 0, bottom = 0){
 	for(var i = box_arr.length - 1; i > 0; i--){
 		box_arr[i].style.left = box_arr[i-1].style.left;
 		box_arr[i].style.top = box_arr[i-1].style.top;
+		console.log("i : "+i+" l: "+box_arr[i].style.left+"top: "+box_arr[i].style.top);
 	}
 	box.style.left = left ? box.offsetLeft + left + 'px' : box.offsetLeft - right + 'px';
 	box.style.top = top ? box.offsetTop + top + 'px' : box.offsetTop - bottom + 'px';
+	console.log("i : "+i+" l: "+box_arr[i].style.left+"top: "+box_arr[i].style.top);
+
 	checkCollision();
 	checkOutOfBound();
 	checkFood();
@@ -134,6 +140,7 @@ function checkCollision(){
 		if( box.offsetLeft === box_arr[i].offsetLeft && box.offsetTop === box_arr[i].offsetTop ){
 			box.className = "box deadblock";
 			pressed = {};
+			console.log("here again "+i);
 			gameOver();
 		}
 	}
