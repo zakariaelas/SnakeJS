@@ -135,17 +135,13 @@ body{
 }
 
 .footer{
-	position:absolute;
-	top:720px;
-	text-align:center;
-	width:1480px;
-	margin:0 auto;
-	font-size:120%;
-	color:#00FF00;
-}
-
-.footer span{
-	float:right;
+	position: absolute;
+	top: 720px;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-size: 120%;
+	color: #00FF00;
 }
 
 .footer a:link,
