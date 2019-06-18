@@ -111,14 +111,6 @@ function move(left = 0, top = 0, right = 0, bottom = 0) {
   for (var i = box_arr.length - 1; i > 0; i--) {
     box_arr[i].style.left = box_arr[i - 1].style.left;
     box_arr[i].style.top = box_arr[i - 1].style.top;
-    console.log(
-      'i : ' +
-        i +
-        ' l: ' +
-        box_arr[i].style.left +
-        'top: ' +
-        box_arr[i].style.top
-    );
   }
   box.style.left = left
     ? box.offsetLeft + left + 'px'
@@ -126,8 +118,6 @@ function move(left = 0, top = 0, right = 0, bottom = 0) {
   box.style.top = top
     ? box.offsetTop + top + 'px'
     : box.offsetTop - bottom + 'px';
-  console.log(
-    'i : ' + i + ' l: ' + box_arr[i].style.left + 'top: ' + box_arr[i].style.top
   );
 
   checkCollision();
