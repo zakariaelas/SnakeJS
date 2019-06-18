@@ -1,4 +1,5 @@
 # SnakeJS
+
 This is an implementation of the famous Snake game.
 
 The project was built using Vanilla JavaScript, HTML, and CSS. No third party libraries were used.
