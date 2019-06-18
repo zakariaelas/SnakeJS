@@ -118,6 +118,7 @@ body{
 
 .hide{
 	display:none;
+	visibility: hidden;
 }
 
 .show{
@@ -138,7 +139,7 @@ body{
 	position: absolute;
 	top: 720px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 	width: 100%;
 	font-size: 120%;
 	color: #00FF00;
@@ -147,4 +148,8 @@ body{
 .footer a:link,
 .footer a:visited{
 	color:#00FF00;
+}
+
+#length-label{
+	padding-right: 30px;
 }

@@ -1,6 +1,6 @@
 //DOM elements
 var startScreen = document.getElementsByClassName('start-screen')[0];
-var box = document.getElementsByClassName('box')[0];
+var snake = document.getElementsByClassName('box')[0];
 var board = document.getElementsByClassName('board')[0];
 var pauseModal = document.getElementsByClassName('modal')[0];
 var gameOverModal = document.getElementsByClassName('modal')[1];
@@ -54,7 +54,7 @@ playAgainButton.addEventListener('click', () => {
     if (idx === 0) return;
     board.removeChild(element);
   });
-  box.classList.toggle('deadblock');
+  snake.classList.toggle('deadblock');
   newGame();
 });
 
@@ -66,18 +66,18 @@ const keydownListener = event => {
     paused = !paused;
     return;
   }
-  // if (
-  //   !paused &&
-  //   length === 1 &&
-  //   (event.keyCode === keys.LEFT ||
-  //     event.keyCode === keys.RIGHT ||
-  //     event.keyCode === keys.UP ||
-  //     event.keyCode === keys.DOWN)
-  // ) {
-  //   pressed = {};
-  //   pressed[event.keyCode] = true;
-  //   return;
-  // }
+  if (
+    !paused &&
+    length === 1 &&
+    (event.keyCode === keys.LEFT ||
+      event.keyCode === keys.RIGHT ||
+      event.keyCode === keys.UP ||
+      event.keyCode === keys.DOWN)
+  ) {
+    pressed = {};
+    pressed[event.keyCode] = true;
+    return;
+  }
   if (
     !paused &&
     ((event.keyCode === keys.LEFT && !pressed[keys.RIGHT]) ||
@@ -87,19 +87,25 @@ const keydownListener = event => {
   ) {
     pressed = {};
     pressed[event.keyCode] = true;
+    //fixes double press bug
+    detect();
   }
 };
 
 function init() {
-  box.style.left = '20px';
-  box.style.top = '20px';
-  box_arr.push(box);
+  snake.style.left = '20px';
+  snake.style.top = '20px';
+  box_arr.push(snake);
   randomBox();
 }
 
 function randomBox() {
-  var left = Math.floor(Math.random() * (board.offsetWidth - box.offsetWidth));
-  var top = Math.floor(Math.random() * (board.offsetHeight - box.offsetHeight));
+  var left = Math.floor(
+    Math.random() * (board.offsetWidth - snake.offsetWidth)
+  );
+  var top = Math.floor(
+    Math.random() * (board.offsetHeight - snake.offsetHeight)
+  );
   food.left = (Math.floor(left / 20) + 1) * 20;
   food.top = (Math.floor(top / 20) + 1) * 20;
   food.dom.style.left = food.left + 'px';
@@ -112,13 +118,12 @@ function move(left = 0, top = 0, right = 0, bottom = 0) {
     box_arr[i].style.left = box_arr[i - 1].style.left;
     box_arr[i].style.top = box_arr[i - 1].style.top;
   }
-  box.style.left = left
-    ? box.offsetLeft + left + 'px'
-    : box.offsetLeft - right + 'px';
-  box.style.top = top
-    ? box.offsetTop + top + 'px'
-    : box.offsetTop - bottom + 'px';
-  );
+  snake.style.left = left
+    ? snake.offsetLeft + left + 'px'
+    : snake.offsetLeft - right + 'px';
+  snake.style.top = top
+    ? snake.offsetTop + top + 'px'
+    : snake.offsetTop - bottom + 'px';
 
   checkCollision();
   checkOutOfBound();
@@ -126,7 +131,7 @@ function move(left = 0, top = 0, right = 0, bottom = 0) {
 }
 
 function checkFood() {
-  if (box.offsetLeft === food.left && box.offsetTop === food.top) {
+  if (snake.offsetLeft === food.left && snake.offsetTop === food.top) {
     food.dom.style.display = 'none';
     createBox();
     randomBox();
@@ -136,10 +141,10 @@ function checkFood() {
 function checkCollision() {
   for (let i = box_arr.length - 1; i > 0; i--) {
     if (
-      box.offsetLeft === box_arr[i].offsetLeft &&
-      box.offsetTop === box_arr[i].offsetTop
+      snake.offsetLeft === box_arr[i].offsetLeft &&
+      snake.offsetTop === box_arr[i].offsetTop
     ) {
-      box.className = 'box deadblock';
+      snake.className = 'box deadblock';
       pressed = {};
       gameOver();
     }
@@ -148,12 +153,12 @@ function checkCollision() {
 
 function checkOutOfBound() {
   if (
-    box.offsetLeft + 10 < 0 ||
-    box.offsetTop < 0 ||
-    box.offsetLeft > board.offsetWidth - box.offsetWidth ||
-    box.offsetTop > board.offsetHeight - box.offsetHeight
+    snake.offsetLeft + 10 < 0 ||
+    snake.offsetTop < 0 ||
+    snake.offsetLeft > board.offsetWidth - snake.offsetWidth ||
+    snake.offsetTop > board.offsetHeight - snake.offsetHeight
   ) {
-    box.className = 'box deadblock';
+    snake.className = 'box deadblock';
     pressed = {};
     gameOver();
   }
@@ -194,4 +199,4 @@ function detect() {
   }
 }
 
-setInterval(detect, 80);
+setInterval(detect, 60);
