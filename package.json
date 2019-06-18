@@ -1,0 +1,47 @@
+{
+  "name": "snakejs",
+  "version": "1.0.0",
+  "description": "A snake game built with HTML, CSS, and Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zakariaelas/SnakeJS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zakariaelas/SnakeJS/issues"
+  },
+  "homepage": "https://github.com/zakariaelas/SnakeJS#readme",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^1.18.2"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "browser": true,
+      "jest": true
+    },
+    "parserOptions": {
+      "ecmaVersion": "2019"
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:prettier/recommended"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-await-in-loop": "warn"
+    }
+  },
+  "prettier": {
+    "singleQuote": true
+  }
+}
