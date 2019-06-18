@@ -12,5 +12,5 @@ eslint and prettier configuration options are included in `package.json`.
 
 ## Demo 
 
-You can try out SnakeJS right [here](https://zakariaelas.github.io/SnakeJS/)
+You can try out SnakeJS right [here](https://zakariaelas.github.io/SnakeJS/).
 
