@@ -1,4 +1,15 @@
 # SnakeJS
-A snake game built with HTML, CSS, and Javascript
+This is an implementation of the famous Snake game.
 
-No third party libraries used.
+The project was built using Vanilla JavaScript, HTML, and CSS. No third party libraries were used.
+
+## Installation
+
+If you wish to play around with the source code, simply download or `git clone` the repository.
+
+eslint and prettier configuration options are included in `package.json`.
+
+## Demo 
+
+You can try out SnakeJS right [here](https://zakariaelas.github.io/SnakeJS/)
+

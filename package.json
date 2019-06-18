@@ -26,8 +26,7 @@
     "env": {
       "node": true,
       "es6": true,
-      "browser": true,
-      "jest": true
+      "browser": true
     },
     "parserOptions": {
       "ecmaVersion": "2019"
